@@ -44,7 +44,7 @@ class CoreNLPTokenizer(Tokenizer):
         annotators = ','.join(annotators)
         options = ','.join(['untokenizable=noneDelete',
                             'invertible=true'])
-        cmd = ['java', '-mx' + self.mem, '-cp', '"%s"' % self.classpath,
+        cmd = ['/usr/local/java/jdk1.8.0_231/bin/java', '-mx' + self.mem, '-cp', '"%s"' % self.classpath,
                'edu.stanford.nlp.pipeline.StanfordCoreNLP', '-annotators',
                annotators, '-tokenize.options', options,
                '-outputFormat', 'json', '-prettyPrint', 'false']
